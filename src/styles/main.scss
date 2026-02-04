@@ -1,0 +1,22 @@
+@use 'vuetify' with (
+  $body-font-family: 'Space Grotesk'
+);
+
+@font-face {
+  font-family : 'Space Grotesk';
+  src         : url('../fonts/SpaceGrotesk-VariableFont_wght.ttf') format('truetype-variations')
+}
+
+#app {
+  max-width: 960px;
+  margin: auto;
+}
+
+body {
+  background-color: black;
+}
+
+button.v-btn[disabled] {
+  color: #383838 !important;
+  background-color: #262626 !important;
+}

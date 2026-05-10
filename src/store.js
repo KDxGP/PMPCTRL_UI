@@ -5,6 +5,8 @@ export const usePmpctrlStore = defineStore('pmpctrl', () => {
   const MBAR_TO_INHG = 33.86389
   const PRESSURE_HISTORY_LENGTH = 120
 
+  const pmpctrl_version = ref()
+
   const sessionBool = ref(false)
   const session = ref('UNKNOWN')
   const timeUtcNow = ref()
@@ -162,7 +164,8 @@ export const usePmpctrlStore = defineStore('pmpctrl', () => {
 
   }
 
-  return { sessionBool,
+  return { pmpctrl_version,
+           sessionBool,
            session,
            timeUtcNow,
            timeUtcSessionStart,

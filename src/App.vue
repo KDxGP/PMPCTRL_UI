@@ -9,7 +9,9 @@ import ControlValve from './components/ControlValve.vue';
 import ConfigSession from './components/ConfigSession.vue';
 import InfoPanel from './components/InfoPanel.vue';
 
+
 import { usePmpctrlStore } from './store';
+import { version } from '../package';
 
 const UPDATE_INTERVAL_MS = 250
 
@@ -71,6 +73,9 @@ function makeApiPutCall(endpoint, content=null) {
 
 async function getApiRoot() {
   let data = await makeApiGetCall('')
+  if (typeof data.pmpctrl_version !== 'undefined') {
+    store.pmpctrl_version = data.pmpctrl_version}
+    else {  store.pmpctrl_version = '?.?.?' }
   store.session = data.session
   data.session == 'on' ? store.sessionBool = true : store.sessionBool = false
   store.pump = data.pump
@@ -168,7 +173,10 @@ onMounted(() => {
     </v-card>
   </v-dialog>
   <div class="w-100 ml-2 mt-2 mr-2">
-    <InfoPanel></InfoPanel>
+    <InfoPanel
+      :pmpctrl-ui-version="version"
+      :pmpctrl-version="store.pmpctrl_version"
+    />
   </div>
   <div class="w-100 ml-2 mt-2 mr-2">
     <ControlSession

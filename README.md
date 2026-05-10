@@ -12,6 +12,11 @@
 
 Visit [https://www.kdxgp.com/pmpctrl](https://www.kdxgp.com/pmpctrl) to view the full documentation.
 
+## Change Log
+### v1.0.1
+- Info Panel update with links and version information
+- API call update to get PMPCTRL version information for info panel
+
 ## Development Notes
 Build in Vue 3 with Vite.
 
@@ -19,3 +24,6 @@ Build in Vue 3 with Vite.
 - Compile and Hot-Reload for Development: ```npm run dev```
 - Compile and Minify for Production: ```npm run build```
 - Lint with ESLint: ```npm run lint```
+
+
+
